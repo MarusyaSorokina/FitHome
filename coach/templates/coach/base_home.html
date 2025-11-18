@@ -1,0 +1,57 @@
+{% extends 'coach/base.html' %}
+{% load static %}
+{% block content %}
+    <main>
+        <!--? slider Area Start-->
+        <div class="slider-area position-relative">
+            <div class="slider-active">
+                <!-- Single Slider -->
+                <div class="single-slider slider-height d-flex align-items-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-9 col-md-8 col-sm-9">
+                                <div class="hero__caption">
+                                    <span data-animation="fadeInLeft" data-delay="0.1s">С FitHome</span>
+                                    <h1 data-animation="fadeInLeft" data-delay="0.4s">Создайте идеальную форму тела
+                                        для полноценной и здоровой жизни.</h1>
+                                    <a href="from.html" class="btn hero-btn" data-animation="fadeInLeft"
+                                       data-delay="0.8s">Записаться на тренировку</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>          
+                </div>
+                <!-- Single Slider -->
+                 <!--? About Area Start -->
+                <section class="about-area section-padding30">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-12">
+                                <!-- about-img -->
+                                <div class="about-img ">
+                                    <img src="{% static 'assets/img/gallery/about.png' %}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-12">
+                                <div class="about-caption">
+                                    <!-- Section Tittle -->
+                                    <div class="section-tittle section-tittle3 mb-35">
+                                        <span>О наших тренировках</span>
+                                        <h2>Безопасное построение тела - правильные решения, которые экономят наше драгоценное время!</h2>
+                                    </div>
+                                    <p class="pera-top">FitHome - это тренировки, разработанные профессиональным тренером специально для занятий дома: они не
+                                        требуют специальной подготовки и оборудования. Тренировки разбиты на направления: похудение, растяжка, рельеф. Подобрана комфортная программа
+                                         и меню, а также вы можете найти полезные спортивные советы.
+                                    </p>
+                                    <p class="mb-65 pera-bottom">Ваше идеальное тело с нашими тренировками!</p>
+                                    <a href="from.html" class="btn">Авторизация</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+    </main>
+
+    {% endblock %}
+
