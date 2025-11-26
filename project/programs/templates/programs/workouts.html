@@ -1,0 +1,72 @@
+{% extends 'coach/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+<!--  <link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">-->
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+<!--    <link rel="stylesheet" href="{% static 'assets/css/gijgo.css' %}">-->
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated-headline.css' %}">
+<!--  <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">-->
+<!--  <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">-->
+<!--  <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">-->
+<!--  <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">-->
+<!--  <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">-->
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-lg-3">
+
+            <h1 class="my-4">Store</h1>
+<!--             Вывод категорий программ тренировок -->
+
+             {% include 'programs/category_program.html' %}
+
+        </div>
+        <!-- /.col-lg-3 -->
+
+        <div class="col-lg-9">
+      <div class="row">
+<!--                фото упражнений -->
+                <div class="col-lg-5" >
+                    <img src="{{ exercise.image.url }}" alt="" class="big">
+                    <br>
+                    <div class="center">
+
+                        {% for img in exercise.photo_set.all %}
+
+                        <img src="{{ img.add_photo.url }}" alt="" class="small">
+
+                        {% endfor %}
+                    </div>
+                </div>
+<!--                название упражнения и краткое описание -->
+                <div class="col-lg-7">
+                    <h1 class="title">{{ exercise.name }}</h1>
+                    <h4>{{ exercise.short_description }}</h4>
+<!--                   возможность добавить себе в профиль упражнение -->
+                   <a href="{% url 'basket_add' exercise.id %}" class="btn btn-outline-success">ДОБАВИТЬ</a><br><br>
+
+<!--                    полное описание техники выполнения упражнения -->
+                    <div>
+
+          {{ exercise.description|safe }}
+          </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
