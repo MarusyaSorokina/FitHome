@@ -35,8 +35,7 @@
                                             <li><a href="{% url 'index' %}">Главная</a></li>
                                             <li><a href="{% url 'coach' %}">О нас</a></li>
                                             <li><a href="{% url 'program' %}">Тренировки</a></li>
-                                            <li><a href="food.html">Питание</a></li>
-                                            <li><a href="blog.html">Блог</a></li>
+                                            <li><a href="{% url 'post_list' %}">Блог</a></li>
 
                                             {% if user.is_authenticated %}
                                                 <li><a href="{% url 'profile' %}">{{ user.username }}</a></li>

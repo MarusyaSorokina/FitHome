@@ -11,3 +11,9 @@ class Coach(models.Model):
     def __str__(self):
         return self.title
 
+class Photo(models.Model):
+    image = models.ImageField(upload_to='photos/')
+    description = models.TextField(blank=True)
+
+    def __str__(self):
+        return self.description or "Photo"

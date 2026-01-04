@@ -83,7 +83,7 @@
                             </div>
                         </div>
                         <div class="col-xl-2 col-lg-2 col-md-3">
-                            <a href="program.html" class="btn wantToWork-btn f-right">Наши тренировки</a>
+                            <a href="{% url 'program' %}" class="btn wantToWork-btn f-right">Наши тренировки</a>
                         </div>
                     </div>
                 </div>
@@ -97,11 +97,11 @@
                                 <i class="flaticon-fitness"></i>
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="program.html">Силовые тренировки</a></h5>
+                                <h5><a href="{% url 'program' %}">Силовые тренировки</a></h5>
                                 <p>Похудеть, набрать массу или всегда оставаться в форме — выбирай то, что подходит именно тебе!</p>
                             </div>
                             <div class="img-cap">
-                                <a href="program.html" class="">Узнать больше о программе<i class="ti-arrow-right"></i></a>
+                                <a href="{% url 'program' %}" class="">Узнать больше о программе<i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -111,13 +111,13 @@
                                 <i class="flaticon-healthcare-and-medical"></i>
                                 </div>
                             <div class="cat-cap">
-                                <h5><a href="program.html">Кардиотренировки</a></h5>
+                                <h5><a href="{% url 'program' %}">Кардиотренировки</a></h5>
                                 <p>Программа состоит из 20 тренировок (10 кардио и 10 растяжек). Тренировки под силу
                                   каждому, а темп упражнений можно уменьшить или увеличить. Надевайте кроссовки и
                                   давайте начинать!</p>
                             </div>
                             <div class="img-cap">
-                                <a href="program.html" class="">Узнать больше о программе<i class="ti-arrow-right"></i></a>
+                                <a href="{% url 'program' %}" class="">Узнать больше о программе<i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -127,14 +127,14 @@
                                 <i class="flaticon-clock"></i>
                             </div>
                             <div class="cat-cap">
-                                <h5><a href="program.html">Растяжка</a></h5>
+                                <h5><a href="{% url 'program' %}">Растяжка</a></h5>
                                 <p>Программа разработана специально для женщин старше 30 лет. С возрастом мы становимся
                                   менее подвижными и гибкими, поэтому в растяжке необходим более мягкий подход.
                                   Занятия стретчингом помогут снять стресс, сделать суставы более мобильными,
                                   а нас — здоровыми!</p>
                             </div>
                             <div class="img-cap">
-                                <a href="program.html" class="">Узнать больше о программе<i class="ti-arrow-right"></i></a>
+                                <a href="{% url 'program' %}" class="">Узнать больше о программе<i class="ti-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -271,8 +271,8 @@
                                                 <option value="">Силовые тренировки</option>
                                                 <option value="">Кардио</option>
                                                 <option value="">Растяжка</option>
-                                                <option value="">Питание</option>
-                                                <option value="">Pole Dance</option>
+<!--                                                <option value="">Питание</option>-->
+<!--                                                <option value="">Pole Dance</option>-->
                                             </select>
                                         </div>
                                     </div>
