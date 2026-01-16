@@ -221,15 +221,1089 @@ section p {
     max-width: 100%;
 }
 
+/* for coach.html */
+
+.section-padding30 {
+    padding: 60px 0;
+}
+
+.section-bg {
+    background-color: #f9f9f9;
+}
+
+/* Заголовок секции */
+.section-tittle span {
+    display: block;
+    font-size: 14px;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.section-tittle h2 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.section-tittle3 h2 {
+    font-size: 28px;
+}
+
+/* Секция «О тренировках» */
+.about-area {
+    background-color: #ffffff;
+}
+
+.about-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.about-caption {
+    padding-left: 30px;
+}
+
+.about-caption .pera-top {
+    font-size: 18px;
+    font-weight: 500;
+    color: #007bff;
+    margin-bottom: 15px;
+}
+
+.about-caption .pera-bottom {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.btn {
+    background:#ff1313;
+    font-family:"Teko",sans-serif;
+    text-transform:uppercase;
+    padding:27px 44px;
+    color:#fff;
+    cursor:pointer;
+    display:inline-block;
+    font-size:18px;
+    font-weight:300;
+    border-radius:0px;
+    line-height:1;
+    -moz-user-select:none;
+    letter-spacing:1px;
+    line-height:0;
+    margin-bottom:0;
+    margin:10px;
+    cursor:pointer;
+    transition:color 0.4s linear;
+    position:relative;
+    z-index:1;
+    border:0;
+    overflow:hidden;
+    margin:0
+}
+
+.btn:hover {
+    background-position:right;
+    background-color: #570311;
+}
 
 
 
+/* for program.html */
 
 
+/* Основное изображение */
+.main-image {
+    margin-bottom: 40px;
+    margin-top: 30px;
+    text-align: center;
+}
+
+.main-image img {
+    max-width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Галерея изображений */
+/* .image-gallery {
+    margin-bottom: 50px;
+}
+
+.image-gallery .img-fluid {
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.image-gallery .img-fluid:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Адаптивность: на мобильных — 1 фото в ряд */
+@media (max-width: 768px) {
+    .image-gallery .col-md-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+} 
 
 
+/* Секция «Программы тренировок для тебя» */
+.wantToWork-area {
+    padding: 30px 0;
+    background-color: #ffffff;
+}
+
+.section-tittle span {
+    display: block;
+    font-size: 14px;
+    color: red;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.section-tittle h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Заголовок FitHome */
+h1.my-4 {
+    font-size: 36px;
+    color: red;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Общий контейнер для карточек */
+
+/* Контейнер для боковой панели */
+.categories-sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.categories-sidebar h3 {
+    font-size: 20px;
+    color: #007bff;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
 
 
+/* Карточки программ тренировок */
+.single-cat2 {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    height: 100%; /* Чтобы карточки были одинаковой высоты */
+    display: flex;
+    flex-direction: column; /* Фото сверху, подпись снизу */
+}
+
+.single-cat2:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Фото */
+.cat-icon {
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-icon img {
+    display: block;
+    width: 100%;
+    height: 200px; /* Фиксированная высота фото */
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.single-cat2:hover .cat-icon img {
+    transform: scale(1.05); /* Лёгкое увеличение при наведении */
+}
+
+/* Подпись */
+.caption-area {
+    padding: 10px 15px;
+    text-align: left;
+    background-color: #f9f9f9; /* Лёгкий фон для подписи */
+    flex: 1;          
+}
+
+.caption-title {
+    margin-bottom: 8px;
+}
+
+.caption-title a {
+    color: #222;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.caption-title a:hover {
+    color: #007bff;
+}
+
+.caption-text {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.pagination-container {
+    margin-top: 40px;
+}
+
+.pagination {
+    display: inline-flex;
+    list-style: none;
+    padding: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.page-item {
+    margin: 0;
+}
+
+.page-link,
+.page-item.active .page-link {
+    color: #667eea;
+    padding: 10px 16px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #e9ecef;
+}
+
+.page-link:hover {
+    background-color: #f0f4f8;
+    color: #5a67d8;
+}
+
+.page-item.active .page-link {
+    background-color: #667eea;
+    color: white;
+    border-color: #667eea;
+}
+
+.page-item.disabled .page-link {
+    color: #999;
+    pointer-events: none;
+    background-color: #f8f9fa;
+    border-color: #e9ecef;
+}
+
+/* Кнопка «Присоединиться» */
+a[href*="register"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 14px 0;
+    background-color: red;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+a[href*="register"]:hover {
+    background-color: #0056b3;
+}
+
+a[href*="register"] i {
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    #carouselExampleIndicators {
+        height: 300px;
+    }
+
+    .section-tittle h2 {
+        font-size: 24px;
+    }
+
+    h1.my-4 {
+        font-size: 30px;
+    }
+    .categories-sidebar {
+        margin-bottom: 30px;
+    }
+
+    .col-lg-4,
+    .col-lg-8 {
+        width: 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .single-cat2 {
+        margin-bottom: 20px;
+    }
+
+    #carouselExampleIndicators {
+        height: 250px;
+    }
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 575.98px) {
+    .single-cat2 {
+        border-radius: 8px;
+    }
+    
+    .cat-icon img {
+        height: 180px;
+    }
+    
+    .caption-area {
+        padding: 15px 16px;
+    }
+    
+    .caption-title a {
+        font-size: 16px;
+    }
+    
+    .caption-text {
+        font-size: 13px;
+    }
+}
 
 
+/* Стилизация workouts.html */
 
+/* Общие настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Важнейший пункт: учитывает padding/border в width/height */
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #ccb5b5;
+    line-height: 1.6;
+    background-color: #d3dfeb;
+}
+
+/* Контейнер страницы: отступ сверху ≥ 80 px */
+.container {
+    padding-top: 80px;
+    padding-bottom: 50px;
+    max-width: 1200px;
+    margin: 0 auto; /* Центрируем контейнер */
+    width: 100%;
+    background: #b19f9f;
+}
+
+/* Левая колонка: категории */
+.col-lg-3 {
+    padding-top: 80px;
+    padding-right: 35px;
+}
+
+h1.my-4 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Правая колонка: информация об упражнении */
+.col-lg-9 {
+    padding-left: 15px;
+    padding-top: 80px;
+}
+
+/* Родительский ряд для фото и описания */
+.row.exercise-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* Расстояние между блоками */
+}
+
+/* Блок с фото (левая часть) */
+.photo-section {
+    flex: 0 0 45%; /* Занимает 45% ширины */
+    max-width: 45%;
+    padding: 80px;
+}
+
+/* Большое фото упражнения */
+.big {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: block;
+}
+
+.big:hover {
+    transform: scale(1.02);
+}
+
+/* Блок с превью фото */
+.center {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Маленькие фото-превью */
+.small {
+    display: inline-block;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 0 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.small:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Блок с описанием (правая часть) */
+.description-section {
+    flex: 0 0 50%; /* Занимает 50% ширины */
+    max-width: 50%;
+    padding-left: 20px;
+}
+
+/* Заголовок упражнения */
+h1.title {
+    font-size: 32px;
+    color: #222;
+    margin-bottom: 10px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Краткое описание */
+h4 {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/* Полное описание техники */
+.description {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
+    color: #444;
+}
+
+.description p,
+.description ul,
+.description ol {
+    margin-bottom: 15px;
+}
+
+.description ul,
+.description ol {
+    padding-left: 20px;
+}
+
+.description li {
+    margin-bottom: 8px;
+}
+
+/* Адаптивность */
+@media (max-width: 991.98px) {
+    .container {
+        padding-top: 40px;
+        padding-bottom: 30px;
+    }
+
+    .row.exercise-row {
+        flex-direction: column; /* Блоки встают друг под другом */
+        gap: 20px;
+    }
+
+    .photo-section,
+    .description-section {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+    }
+
+    h1.title {
+        font-size: 26px;
+    }
+
+    h4 {
+        font-size: 16px;
+    }
+
+    .big,
+    .small {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+    }
+
+    .center {
+        margin-top: 10px;
+    }
+
+    .description {
+        padding: 15px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding-top: 30px;
+        padding-bottom: 25px;
+    }
+
+    h1.title {
+        font-size: 22px;
+    }
+
+    h4 {
+        font-size: 14px;
+    }
+
+    .description {
+        font-size: 13px;
+        padding: 12px;
+    }
+}
+
+/* Модальное окно (по умолчанию скрыто) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Кнопка закрытия */
+.close {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    z-index: 1100;
+}
+
+/* Изображение в модалке */
+.modal-content {
+    max-width: 90%;
+    max-height: 85%;
+    animation: zoom 0.3s;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Анимация появления */
+@keyframes zoom {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* Адаптивность: на мобильных */
+@media (max-width: 768px) {
+    .modal {
+        justify-content: flex-start;
+        padding-top: 20px;
+    }
+
+    .modal-content {
+        max-width: 100%;
+        max-height: 70%;
+        margin: 0 auto;
+    }
+
+    .close {
+        top: 10px;
+        right: 15px;
+        font-size: 26px;
+    }
+}
+
+
+/* Стилизация post_list.html */
+
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #dee5f7;
+    color: #f3efef;
+    line-height: 1.6;
+}
+
+/* Hero‑блок (slider-area2) */
+.slider-area2 {
+    background: linear-gradient(135deg, #e8ebf5 0%, #ebe9ee 100%);
+    padding: 95px 0;
+}
+
+.slider-height2 {
+    /* min-height: 280px; */
+    position: relative;
+}
+
+.hero-cap2 {
+    padding-top: 95px;
+    text-align: left;
+    color: white;
+}
+
+.hero-cap2 h2 {
+    font-size: 30px;
+    text-align: left;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    padding-top: 15px;
+}
+
+.count {
+    font-size: 15px;
+    text-align: left;
+    opacity: 0.9;
+    margin-top: 5px;
+}
+
+/* Контейнер для контента */
+.container {
+    max-width: 1070px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Сетка постов */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.col-xl-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Карточка поста */
+.element {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.element:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Заголовок поста */
+.top {
+    margin: 0;
+    padding: 25px 30px 15px;
+}
+
+.top a {
+    color: #2c3e50;
+    font-size: 25px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.top a:hover {
+    color: #adb4d3;
+}
+
+/* Дата и текст поста */
+.post_text {
+    padding: 0 30px 25px;
+}
+
+.post_text h5 {
+    color: #888;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.post_text p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media (max-width: 991.98px) {
+    .hero-cap2 h2 {
+        font-size: 36px;
+    }
+
+    .count {
+        font-size: 18px;
+    }
+
+    .element {
+        margin-top: 25px;
+        border-radius: 14px;
+    }
+
+    .top a {
+        font-size: 24px;
+    }
+
+    .post_text h5 {
+        font-size: 13px;
+    }
+
+    .post_text p {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .slider-height2 {
+        min-height: 220px;
+    }
+
+    .hero-cap2 h2 {
+        font-size: 30px;
+    }
+
+    .count {
+        font-size: 16px;
+    }
+
+    .element {
+        margin-top: 20px;
+        border-radius: 12px;
+    }
+
+    .top {
+        padding: 20px 20px 12px;
+    }
+
+    .top a {
+        font-size: 22px;
+    }
+
+    .post_text {
+        padding: 0 20px 20px;
+    }
+
+    .post_text h5 {
+        font-size: 12px;
+    }
+
+    .post_text p {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .slider-area2 {
+        padding: 40px 0;
+    }
+
+    .hero-cap2 h2 {
+        font-size: 26px;
+    }
+
+    .count {
+        font-size: 14px;
+    }
+
+    .element {
+        margin-top: 15px;
+        border-radius: 10px;
+    }
+
+    .top {
+        padding: 15px 15px 10px;
+    }
+
+    .top a {
+        font-size: 20px;
+    }
+
+    .post_text {
+        padding: 0 15px 15px;
+    }
+
+    .post_text h5 {
+        font-size: 11px;
+    }
+
+    .post_text p {
+        font-size: 13px;
+    }
+}
+
+
+/* стилизация details.html */
+
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f9fafc;
+    color: #b8b2b2;
+    line-height: 1.6;
+    padding: 80px 0;
+}
+
+/* Контейнер детального просмотра поста */
+.detail {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 80px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Заголовок поста */
+.detail h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    line-height: 1.3;
+}
+
+/* Дата публикации */
+.detail h2 {
+    font-size: 18px;
+    color: #888;
+    font-weight: 500;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* Контент поста (HTML-контент) */
+.detail .content,
+.detail p,
+.detail ul,
+.detail ol,
+.detail blockquote,
+.detail table,
+.detail pre {
+    margin-bottom: 20px;
+}
+
+.detail p {
+    font-size: 17px;
+    color: #444;
+    text-align: justify;
+}
+
+.detail ul,
+.detail ol {
+    padding-left: 25px;
+    font-size: 17px;
+}
+
+.detail li {
+    margin-bottom: 8px;
+    color: #8d8a8a;
+}
+
+.detail blockquote {
+    border-left: 4px solid #667eea;
+    background-color: #f0f4f8;
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+    font-style: italic;
+    color: #666;
+}
+
+.detail table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+}
+
+.detail th,
+.detail td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.detail th {
+    background-color: #f2f4f6;
+    font-weight: 600;
+}
+
+.detail pre {
+    background-color: #2d3748;
+    color: #e2e8f0;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+}
+
+.detail code {
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    padding: 2px 5px;
+    background-color: #f1f2f4;
+    border-radius: 4px;
+    color: #d6336c;
+}
+
+/* Изображения в контенте */
+.detail img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+    display: block;
+}
+
+/* Ссылки в контенте */
+.detail a {
+    color: #667eea;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.detail a:hover {
+    color: #5a67d8;
+    text-decoration: underline;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .detail {
+        max-width: 95%;
+        padding: 80px;
+        border-radius: 12px;
+    }
+
+    .detail h1 {
+        font-size: 30px;
+    }
+
+    .detail h2 {
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .detail p,
+    .detail ul,
+    .detail ol {
+        font-size: 16px;
+    }
+
+    .detail pre,
+    .detail code {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail {
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    .detail h1 {
+        font-size: 26px;
+    }
+
+    .detail h2 {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .detail p,
+    .detail ul,
+    .detail ol {
+        font-size: 15px;
+    }
+
+    .detail blockquote {
+        padding: 12px 15px;
+    }
+
+    .detail table {
+        font-size: 14px;
+    }
+}

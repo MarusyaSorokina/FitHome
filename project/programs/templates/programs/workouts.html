@@ -15,58 +15,92 @@
   <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href= "{% static 'css/style.css' %}">
 {% endblock %}
 
+
 {% block content %}
-
 <div class="container">
-
     <div class="row">
-
+        <!-- Левая колонка: категории -->
         <div class="col-lg-3">
-
-            <h1 class="my-4">Store</h1>
-<!--             Вывод категорий программ тренировок -->
-
-             {% include 'programs/category_program.html' %}
-
+            <h1 class="my-4"></h1>
+            {% include 'programs/category_program.html' %}
         </div>
-        <!-- /.col-lg-3 -->
 
+        <!-- Правая колонка: упражнение -->
         <div class="col-lg-9">
-      <div class="row">
-<!--                фото упражнений -->
-                <div class="col-lg-5" >
+            <div class="row exercise-row">
+                <!-- Блок с фото -->
+                <div class="photo-section">
                     <img src="{{ exercise.image.url }}" alt="" class="big">
-                    <br>
                     <div class="center">
-
                         {% for img in exercise.photo_set.all %}
-
-                        <img src="{{ img.add_photo.url }}" alt="" class="small">
-
+                            <img src="{{ img.add_photo.url }}" alt="" class="small">
                         {% endfor %}
                     </div>
                 </div>
-<!--                название упражнения и краткое описание -->
-                <div class="col-lg-7">
+
+                <!-- Блок с описанием -->
+                <div class="description-section">
                     <h1 class="title">{{ exercise.name }}</h1>
                     <h4>{{ exercise.short_description }}</h4>
-<!--                   возможность добавить себе в профиль упражнение -->
-                   <a href="{% url 'basket_add' exercise.id %}" class="btn btn-outline-success">ДОБАВИТЬ</a><br><br>
-
-<!--                    полное описание техники выполнения упражнения -->
-                    <div>
-
-          {{ exercise.description|safe }}
-          </div>
+                    <div class="description">
+                        {{ exercise.description|safe }}
+                    </div>
                 </div>
             </div>
-
         </div>
-
     </div>
-
 </div>
+
+<!-- Скрытое модальное окно -->
+<div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('modalImage');
+    const closeBtn = document.querySelector('.close');
+
+    // Находим ВСЕ изображения внутри блока с фото
+    const allImages = document.querySelectorAll('.photo-section img');
+
+    // Для каждого изображения добавляем обработчик клика
+    allImages.forEach(img => {
+        img.addEventListener('click', function() {
+            modal.style.display = 'flex';           // Показываем модалку
+            modalImg.src = this.src;              // Копируем src в модальное изображение
+            document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
+        });
+    });
+
+    // Закрываем по крестику
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = ''; // Возвращаем скролл
+    });
+
+    // Закрываем при клике на фон модалки
+
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+
+    // Закрываем по Esc
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});
+</script>
 
 {% endblock %}

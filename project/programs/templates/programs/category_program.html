@@ -1,8 +1,8 @@
 
 <div class="list-group">
-    <a href="{% url 'program' %}" class="list-group-item">Программы тренировок</a>
-
+    <a href="{% url 'program' %}" class="list-group-item">Все программы</a>
     {% for category in categories %}
-    <a href="{% url 'category' category.id  %}" class="list-group-item">{{ category.name }}</a>
+    <a href="{% url 'category' category.id %}" class="list-group-item">{{ category.name }}</a>
+
     {% endfor %}
 </div>

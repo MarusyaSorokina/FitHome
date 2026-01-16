@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Coach, Photo
+from .models import Coach, Photo, CoachCategory
 
 
 def index(request):
@@ -9,11 +9,11 @@ def index(request):
 def coach(request):
     tren = Coach.objects.all()
     context = {
+        'title': 'FitHome - тренировки',
+        'categories': CoachCategory.objects.all(),
         "coach": tren,
     }
     return render(request, "coach/coach.html", context)
 
-def gallery(request):
-    photos = Photo.objects.all()
-    return render(request, 'coach/gallery.html', {'photos': photos})
+
 

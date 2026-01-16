@@ -15,26 +15,13 @@
   <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+<link rel="stylesheet" href= "{% static 'css/style.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <main>
-        <!--? Hero Start -->
-<!--        <div class="slider-area2">-->
-<!--            <div class="slider-height2 d-flex align-items-center">-->
-<!--                <div class="container">-->
-<!--                    <div class="row">-->
-<!--                        <div class="col-xl-12">-->
-<!--                            <div class="hero-cap hero-cap2 text-center pt-70">-->
-<!--                                <h2>FitHome - с каждым днем ты становишься лучше!</h2>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-        <!-- Hero End -->
+
         <!--? About Area Start -->
         <section class="about-area section-padding30">
             <div class="container">
@@ -62,81 +49,7 @@
                 </div>
             </div>
         </section>
-        <!-- About-2 Area End -->
-        <!--? Gallery Area Start -->
-        <div class="gallery-area">
-            <div class="container-fluid p-0 fix">
-                <div class="row">
-                    <div class="col-lg-6">
-                        <div class="box snake mb-30">
-                            <div class="gallery-img big-img" style="background-image: url(assets/img/gallery/gallery1.png);"></div>
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <a href="{% url 'gallery' %}"><i class="ti-arrow-top-right"></i></a>
-                                    <h3>Наши лучшие тренировки</h3>
-                                    <p>Фитнес, тело</p>
-                                </div>
-</div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="box snake mb-30">
-                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/gallery2.png);"></div>
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <a href="{% url 'gallery' %}"><i class="ti-arrow-top-right"></i></a>
-                                        <h3>Наши лучшие тренировки</h3>
-                                        <p>Фитнес, тело</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
 
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="box snake mb-30">
-                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/gallery3.png);"></div>
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <a href="{% url 'gallery' %}"><i class="ti-arrow-top-right"></i></a>
-                                        <h3>Наши лучшие тренировки</h3>
-                                        <p>Фитнес, тело</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="box snake mb-30">
-                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/gallery4.png);"></div>
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <a href="{% url 'gallery' %}"><i class="ti-arrow-top-right"></i></a>
-                                        <h3>Наши лучшие тренировки</h3>
-                                        <p>Фитнес, тело</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6">
-                            <div class="box snake mb-30">
-                                <div class="gallery-img small-img" style="background-image: url(assets/img/gallery/gallery5.png);"></div>
-                                <div class="overlay">
-                                    <div class="overlay-content">
-                                        <a href="{% url 'gallery' %}"><i class="ti-arrow-top-right"></i></a>
-                                        <h3>Наши лучшие тренировки</h3>
-                                        <p>Фитнес, тело</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-<!-- Team Ara End -->
         <!--? Want To work -->
     <section class="services-area pt-100 pb-150 section-bg" data-background="{% static 'assets/img/gallery/section_bg02.png' %}">
             <!--? Want To work -->
@@ -184,8 +97,6 @@
         </section>
 
 
-
-        <!-- Want To work End -->
     </main>
 
 {% endblock %}
