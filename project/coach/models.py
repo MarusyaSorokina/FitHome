@@ -1,6 +1,5 @@
 from django.db import models
 
-from programs.models import Exercise, Photo
 
 class CoachCategory(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name='Программа')

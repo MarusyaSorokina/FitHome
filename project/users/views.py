@@ -1,10 +1,12 @@
+from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
-
-from .forms import UserLoginForm, UserRegistrationForm, UserProfileForm
+from programs.models import FavouriteExercise
+from .forms import UserLoginForm, UserRegistrationForm, ProfileUpdateForm
 from django.contrib import auth, messages
+
 
 
 def login(request):
@@ -55,20 +57,39 @@ def register(request):
     }
     return render(request, 'users/register.html', context)
 
+
+@login_required
 def profile(request):
     if request.method == 'POST':
-        form = UserProfileForm(data=request.POST, files=request.FILES, instance=request.user)
+        form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Профиль обновлён!')
             return redirect('profile')
     else:
-        form = UserProfileForm(instance=request.user)
-    context = {'title': 'FitHome - Профиль',
-               'form': form
-               }
+        form = ProfileUpdateForm(instance=request.user)  # ← Заполняем форму текущими данными
+
+    favourites = FavouriteExercise.objects.filter(user=request.user).select_related('exercise')
+    return render(request, 'users/profile.html', {
+        'form': form,
+        'favourites': favourites
+    })
+
+    # Получаем избранные упражнения текущего пользователя
+    favourites = FavouriteExercise.objects.filter(user=request.user).select_related('exercise')  # Оптимизация: загружаем упражнение сразу
+
+    context = {
+        'favourites': favourites,
+        # Другие данные профиля (например, request.user.username)
+    }
     return render(request, 'users/profile.html', context)
+
+
+    return render(request, 'users/profile.html', {'form': form})
+
 
 def logout(request):
     auth.logout(request)
     messages.success(request, 'Вы вышли из учетной записи')
     return redirect('index')
+

@@ -1,22 +1,8 @@
-from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, UserChangeForm
+from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django import forms
 
 from users.models import User
 
-class UserProfileForm(UserChangeForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'readonly': True}))
-    email = forms.CharField(widget=forms.EmailInput(attrs={'readonly': True}))
-    image = forms.ImageField(widget=forms.FileInput(), required=False)
-
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        for field in self.fields.values():
-            field.widget.attrs['class'] = 'form-control py-4'
-        self.fields['image'].widget.attrs['class'] = 'custom-file-input'
-
-    class Meta:
-        model = User
-        fields = ('first_name', 'last_name', 'image', 'username', 'email')
 
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': "Введите имя"}))
@@ -49,4 +35,41 @@ class UserLoginForm(AuthenticationForm):
         fields = ('username', 'password')
 
 
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'username', 'email', 'image']
+        widgets = {
+            'first_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Ваше имя'
+            }),
+            'last_name': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Ваша фамилия'
+            }),
+            'username': forms.TextInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Логин'
+            }),
+            'email': forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Email'
+            }),
+            'image': forms.FileInput(attrs={
+                'class': 'custom-file-input'
+            })
+        }
 
+    def clean_image(self):
+        image = self.cleaned_data.get('image')
+        if image:
+            # Ограничиваем размер файла (например, до 5 МБ)
+            if image.size > 5 * 1024 * 1024:
+                raise forms.ValidationError("Изображение слишком большое (максимум 5 МБ).")
+        return image
+
+# Форма для добавления упражнений
+
+class FavouriteExerciseForm(forms.Form):
+    exercise_id = forms.IntegerField(widget=forms.HiddenInput())

@@ -1,5 +1,8 @@
 from django.db import models
 
+from users.models import User
+
+
 class Programs(models.Model):
     name = models.CharField(max_length=100, unique=True, verbose_name='Программа')
     description = models.TextField(blank=True, verbose_name='Описание программы')
@@ -37,3 +40,13 @@ class Photo(models.Model):
     class Meta:
         verbose_name = 'изображение'
         verbose_name_plural = 'изображения'
+
+
+class FavouriteExercise(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    exercise = models.ForeignKey(Exercise, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    class Meta:
+        unique_together = ('user', 'exercise')

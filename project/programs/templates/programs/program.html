@@ -46,95 +46,105 @@
 
             <!-- Want To work End -->
             <div class="container mt-5">
-                <div class="row">
-                    <!-- Левая колонка: категории тренировок -->
-                    <div class="col-lg-4 col-md-12 mb-4">
-                        <div class="categories-sidebar">
-                            <h3>Категории тренировок</h3>
-                            {% include 'programs/category_program.html' %}
-                        </div>
-                    </div>
-
-        <!-- Правая колонка: фото с подписями (2 столбца) -->
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    {% for program in exercise %}
-                    <div class="col-12 col-sm-6 mb-40">
-                        <div class="single-cat single-cat2 text-center">
-                            <!-- Фото упражнения -->
-                            <div class="cat-icon">
-                                <a href="{% url 'workouts' program.id %}">
-                                    <img class="card-img-top" src="{{ program.image.url }}" alt="{{ program.name }}">
-                                </a>
-                            </div>
-
-                            <!-- Подпись под фото -->
-                            <div class="caption-area">
-                                <h4 class="caption-title">
-                                    <a href="{% url 'workouts' program.id %}">{{ program.name }}</a>
-                                </h4>
-                                <p class="caption-text">{{ program.short_description }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    {% endfor %}
+        <div class="row">
+            <!-- Левая колонка: категории -->
+            <div class="col-lg-4 col-md-12 mb-4">
+                <div class="categories-sidebar">
+                    <h3>Категории тренировок</h3>
+                    {% include 'programs/category_program.html' %}
                 </div>
+            </div>
 
+            <!-- Правая колонка: упражнения -->
+            <div class="col-lg-8 col-md-12">
+    <div class="row">
+        {% for program in exercise %}
+            <div class="col-12 col-sm-6 mb-40">
+                <div class="single-cat single-cat2 text-center">
+                    <!-- Фото упражнения -->
+                    <div class="cat-icon">
+                        <a href="{% url 'workouts' program.id %}">
+                            <img class="card-img-top" src="{{ program.image.url }}" alt="{{ program.name }}">
+                        </a>
+                    </div>
+
+                    <!-- Подпись и кнопка -->
+                    <div class="caption-area">
+                        <h4 class="caption-title">
+                            <a href="{% url 'workouts' program.id %}">{{ program.name }}</a>
+                        </h4>
+                        <p class="caption-text">{{ program.short_description }}</p>
+
+                        <!-- Кнопка «В избранное» (ОДНА на упражнение!) -->
+                        <form action="{% url 'add_to_favourites' program.id %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Добавить в избранное</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
                 <!-- Пагинация -->
     {% if exercise %}
-        <div class="pagination-container text-center mt-5">
-            <nav aria-label="Page navigation">
-                <ul class="pagination justify-content-center">
+<div class="pagination-container text-center mt-5">
+    <nav aria-label="Навигация по страницам">
+        <ul class="pagination justify-content-center">
 
-                <!-- Кнопка «Предыдущая» -->
-                {% if exercise.has_previous %}
+
+            <!-- Кнопка «Предыдущая» -->
+            {% if exercise.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ exercise.previous_page_number }}" aria-label="Предыдущая страница">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">&laquo;</span>
+                </li>
+            {% endif %}
+
+
+            <!-- Номера страниц -->
+            {% for num in paginator.page_range %}
+                {% if exercise.number == num %}
+                    <li class="page-item active" aria-current="page">
+                        <span class="page-link">
+                            {{ num }}
+                            <span class="visually-hidden">(текущая)</span>
+                        </span>
+                    </li>
+                {% elif num > exercise.number|add:-3 and num < exercise.number|add:3 %}
                     <li class="page-item">
-                        <a class="page-link" href="?page={{ exercise.previous_page_number }}" aria-label="Previous">
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled">
-                        <span class="page-link">&laquo;</span>
+                        <a class="page-link" href="?page={{ num }}">{{ num }}</a>
                     </li>
                 {% endif %}
+            {% endfor %}
 
-                <!-- Номера страниц -->
-                {% for num in paginator.page_range %}
-                    {% if exercise.number == num %}
-                        <li class="page-item active" aria-current="page">
-                            <span class="page-link">{{ num }} <span class="sr-only">(current)</span></span>
-                        </li>
-                    {% elif num > exercise.number|add:-3 and num < exercise.number|add:3 %}
-                        <li class="page-item">
-                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
-                        </li>
-                    {% endif %}
-                {% endfor %}
 
-                <!-- Кнопка «Следующая» -->
-                {% if exercise.has_next %}
-                    <li class="page-item">
-                        <a class="page-link" href="?page={{ exercise.next_page_number }}" aria-label="Next">
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                {% else %}
-                    <li class="page-item disabled">
-                        <span class="page-link">&raquo;</span>
-                    </li>
-                {% endif %}
+            <!-- Кнопка «Следующая» -->
+            {% if exercise.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ exercise.next_page_number }}" aria-label="Следующая страница">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% else %}
+                <li class="page-item disabled">
+                    <span class="page-link">&raquo;</span>
+                </li>
+            {% endif %}
 
-            </ul>
-        </nav>
-    </div>
-                {% endif %}
-            </div>
-        </div>
-   </div>
 
+        </ul>
+    </nav>
+</div>
+{% endif %}
+</div>
             <a href="{% url 'register' %}" class="">Присоединится прямо сейчас<i class="ti-arrow-right"></i></a>
-   </div>
+
 
       </div>
   </div>

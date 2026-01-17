@@ -1,0 +1,129 @@
+{% extends 'coach/base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/slicknav.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/gijgo.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/css/animated-headline.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/magnific-popup.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome-all.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/nice-select.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">>
+{% endblock %}
+
+{% block content %}
+
+<div id="layoutAuthentication" class="bg-light">
+    <div id="layoutAuthentication_content">
+        <main class="py-5">
+            <div class="container">
+                <div class="row justify-content-center" style="margin-top: 100px;">
+                    <div class="col-lg-7 col-xl-6">
+                        {% include 'users/message_error.html' %}
+
+
+                        <div class="card shadow-lg border-0 rounded-xl mt-4 overflow-hidden">
+                            <!-- Заголовок -->
+                            <div class="card-header bg-primary text-white text-center py-4">
+                                <h3 class="font-weight-bold mb-0">Создать аккаунт</h3>
+                            </div>
+
+                            <!-- Тело формы -->
+                            <div class="card-body p-5">
+                                <form action="{% url 'register' %}" method="post" class="needs-validation" novalidate>
+                    {% csrf_token %}
+
+                    <!-- Имя и фамилия -->
+                    <div class="form-row mb-4">
+                        <div class="col-md-6">
+                            <label for="{{ form.first_name.id_for_label }}" class="form-label fw-semibold text-secondary">Имя</label>
+                            {{ form.first_name }}
+                            {% if form.first_name.errors %}
+                                <div class="invalid-feedback d-block">{{ form.first_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.last_name.id_for_label }}" class="form-label fw-semibold text-secondary">Фамилия</label>
+                            {{ form.last_name }}
+                            {% if form.last_name.errors %}
+                                <div class="invalid-feedback d-block">{{ form.last_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Email и username -->
+                    <div class="form-row mb-4">
+                        <div class="col-md-6">
+                            <label for="{{ form.username.id_for_label }}" class="form-label fw-semibold text-secondary">Имя пользователя</label>
+                            {{ form.username }}
+                            {% if form.username.errors %}
+                                <div class="invalid-feedback d-block">{{ form.username.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.email.id_for_label }}" class="form-label fw-semibold text-secondary">Email</label>
+                            {{ form.email }}
+                            {% if form.email.errors %}
+                                <div class="invalid-feedback d-block">{{ form.email.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Пароль и подтверждение -->
+                    <div class="form-row mb-4">
+                        <div class="col-md-6">
+                            <label for="{{ form.password1.id_for_label }}" class="form-label fw-semibold text-secondary">Пароль</label>
+                            {{ form.password1 }}
+                            {% if form.password1.errors %}
+                                <div class="invalid-feedback d-block">{{ form.password1.errors }}</div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-6">
+                            <label for="{{ form.password2.id_for_label }}" class="form-label fw-semibold text-secondary">Подтверждение пароля</label>
+                            {{ form.password2 }}
+                            {% if form.password2.errors %}
+                                <div class="invalid-feedback d-block">{{ form.password2.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    <!-- Кнопка отправки -->
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary btn-lg rounded-pill shadow-sm">
+                            Создать аккаунт
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+
+            <!-- Footer с ссылкой на вход -->
+            <div class="card-footer bg-white text-center py-4 border-top border-light">
+                <p class="text-muted small mb-0">
+                    Уже есть аккаунт?
+                    <a href="{% url 'login' %}" class="text-primary fw-bold text-decoration-none">Войти</a>
+                </p>
+            </div>
+                            {% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+        </div>
+    </div>
+</div>
+
+</main>
+</div>
+</div>
+
+{% endblock %}
